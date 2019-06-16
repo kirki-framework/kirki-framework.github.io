@@ -1,0 +1,12 @@
+remote_theme: kirki-framework/docs-theme
+
+# Site title and description
+title:              Kirki Docs
+description:        WordPress Customizer Framework
+lang:               en
+
+# Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+permalink:          /:title/
+
+# Site base hostname & protocol, e.g. http://example.com
+url:                "https://kirki-framework.github.io"
