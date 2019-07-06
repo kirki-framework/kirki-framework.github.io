@@ -13,13 +13,18 @@ It is also possible to create a hue-only control.
 
 ## Screenshots
 
+A HEX colorpicker:
 <p><img src="/uploads/color-hex.png" width="300"></p>
+
+An RGBA colorpicker:
 <p><img src="/uploads/color-rgba.png" width="300"></p>
+
+A hue colorpicker:
 <p><img src="/uploads/color-hue.png" width="300"></p>
 
 ## Installation
 
-### Installation Using Composer
+### Using Composer
 
 You can install this control using Composer:
 
@@ -32,7 +37,7 @@ In your theme's `functions.php` file make sure you include the autoloader:
 require_once get_parent_theme_file_path( 'vendor/autoload.php' );
 ```
 
-### Installation without Composer
+### Without Composer
 
 If you are not using composer, you will need to download the repository as well as its dependencies.
 We recommend you install these packages in a new folder, for example `inc/customizer/packages` in your theme.  
