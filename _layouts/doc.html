@@ -42,6 +42,7 @@ layout: default
 					<div class="article-content link-primary">
 						{{ content }}
 						{% if site.share.doc %}{% include share.html %}{% endif %}
+						{% include edit-link.html %}
 					</div>
 
 					{% include hook-post-content-doc.html %}
@@ -51,8 +52,6 @@ layout: default
 					{% include paginate-doc.html %}
 
 					{% include related-docs.html %}
-
-					{% if site.disqus.shortname %}{% include disqus_comments.html %}{% endif %}
 				</article>
 
 				<script>
