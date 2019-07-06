@@ -22,10 +22,6 @@ An RGBA colorpicker:
 A hue colorpicker:
 <p><img src="/uploads/color-hue.png" width="300"></p>
 
-## Repository
-
-You can find the control's repository on [Github](https://github.com/kirki-framework/control-color/)
-
 ## Adding a Color Field
 
 ```php
@@ -70,3 +66,7 @@ Please note that when in hue mode, the control will save an `integer` value. To 
 * The `color` field saves a `string` with the `hex` code of the selected color. Example: `#000000`.
 * If your control supports transparency and the selected color is not 100% opaque, the value will be saved as a string containing the `rbga` color. Example: `rgba(0,0,0,0)`.
 * If your control is a hue-only control, the value saved will be an integer between `0` and `359`.
+
+## Repository
+
+You can find the control's repository on [Github](https://github.com/kirki-framework/control-color/)
