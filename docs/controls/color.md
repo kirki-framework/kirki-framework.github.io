@@ -22,13 +22,9 @@ An RGBA colorpicker:
 A hue colorpicker:
 <p><img src="/uploads/color-hue.png" width="300"></p>
 
-## Installation
+## Repository
 
-If you don't need to install the Kirki Framework, you can install this individual control using `composer`:
-
-```bash
-composer require kirki-framework/control-color
-```
+You can find the control's repository on [Github](https://github.com/kirki-framework/control-color/)
 
 ## Adding a Color Field
 
