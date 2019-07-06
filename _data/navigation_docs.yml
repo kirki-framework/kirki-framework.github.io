@@ -9,3 +9,21 @@
 
 - title: Modules
   docs:
+
+- title: Arguments
+  docs:
+  - arguments/label
+  - arguments/description
+  - arguments/settings
+  - arguments/section
+  - arguments/active_callback
+  - arguments/capability
+  - arguments/priority
+  - arguments/sanitize_callback
+  - arguments/choices
+  - arguments/default
+  - arguments/option_type
+  - arguments/option_name
+  - arguments/js_vars
+  - arguments/fields
+  - arguments/multiple
