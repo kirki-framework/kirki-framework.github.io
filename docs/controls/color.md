@@ -32,11 +32,6 @@ You can install this control using Composer:
 composer require kirki-framework/control-color
 ```
 
-In your theme's `functions.php` file make sure you include the autoloader:
-```php
-require_once get_parent_theme_file_path( 'vendor/autoload.php' );
-```
-
 ### Without Composer
 
 If you are not using composer, you will need to download the repository as well as its dependencies.
