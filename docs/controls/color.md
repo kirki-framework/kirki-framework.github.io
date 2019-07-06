@@ -24,38 +24,10 @@ A hue colorpicker:
 
 ## Installation
 
-### Using Composer
-
-You can install this control using Composer:
+If you don't need to install the Kirki Framework, you can install this individual control using `composer`:
 
 ```bash
 composer require kirki-framework/control-color
-```
-
-### Without Composer
-
-If you are not using composer, you will need to download the repository as well as its dependencies.
-We recommend you install these packages in a new folder, for example `inc/customizer/packages` in your theme.  
-To download the packages you can download the repositories via `git`:
-
-```bash
-git clone https://github.com/kirki-framework/control-color
-git clone https://github.com/kirki-framework/control-base
-git clone https://github.com/kirki-framework/url-getter
-git clone https://github.com/kirki-framework/field
-```
-Once the repositories are cloned, you can include the files in your theme's `functions.php` file:
-
-```php
-// Include url-getter package files.
-require_once 'inc/customizer/packages/url-getter/src/URL.php';
-// Include control-base package files.
-require_once 'inc/customizer/packages/control-base/src/Control/Base.php';
-// Include field package files.
-require_once 'inc/customizer/packages/field/src/Field.php';
-// Include control-color package files.
-require_once 'inc/customizer/packages/control-color/src/Control/Color.php';
-require_once 'inc/customizer/packages/control-color/src/Field/Color.php';
 ```
 
 ## Adding a Color Field
