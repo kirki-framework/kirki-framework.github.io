@@ -5,21 +5,11 @@ subtitle: A flexible Colorpicker control for the WordPress Customizer
 tags: [controls]
 ---
 
-The `kirki-color` control allows you to add a customized color control in the WordPress Customizer and uses [iro.js] for the colorpicker.
+The `kirki-color` control allows you to add a customized color control in the WordPress Customizer.
 
-The control will automatically detect and use the color-palette defined by your theme as per the [WordPress Docs](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/).  
-Visually the palette resembles the palette selector that users are accustomed to from the WordPress Editor.
-
-<img src="https://user-images.githubusercontent.com/588688/57177708-aaf32f00-6e6f-11e9-91c9-046865f95939.png" alt="Color control collapsed" width="300">
-
-Users can select a color by clicking on a color from the palette, or select a custom color by clicking on the "Select Color" link.  
-They can enter a custom value in the textfield, or use the colorpicker to select their color. The colorpicker is also able to [handle `rgba` colors](https://github.com/kirki-framework/control-color/wiki/Adding-transparency-support).
-
-<img src="https://user-images.githubusercontent.com/588688/57177713-c100ef80-6e6f-11e9-8c51-6cac6da07fed.png" alt="Color control with alpha channel - expanded" width="300">
+The control will automatically detect and use the color-palette defined by your theme as per the [WordPress Docs](https://wordpress.org/gutenberg/handbook/designers-developers/developers/themes/theme-support/), and the defined colors will be used for the control's palette options.  
 
 It is also possible to [create a hue-only control](https://github.com/kirki-framework/control-color/wiki/Adding-a-hue-only-control).
-
-<img src="https://user-images.githubusercontent.com/588688/57177723-d413bf80-6e6f-11e9-90dc-a9ef415b3fdb.png" alt="Hue-only colorpicker" width="300">
 
 ## Installation Using Composer
 
@@ -36,12 +26,28 @@ require_once get_parent_theme_file_path( 'vendor/autoload.php' );
 
 ## Installation without Composer
 
-If you are not using composer, you can download the control from [this repository](https://github.com/kirki-framework/control-color).  
-Once you download - or clone - the repository, place the files in your theme. You can then include the files by adding the following lines in your `functions.php` file:
+If you are not using composer, you will need to download the repository as well as its dependencies.
+We recommend you install these packages in a new folder, for example `inc/customizer/packages` in your theme.  
+To download the packages you can download the repositories via `git`:
+
+```bash
+git clone https://github.com/kirki-framework/control-color
+git clone https://github.com/kirki-framework/control-base
+git clone https://github.com/kirki-framework/url-getter
+git clone https://github.com/kirki-framework/field
+```
+Once the repositories are cloned, you can include the files in your theme's `functions.php` file:
 
 ```php
-require_once 'control-color/src/Control/Color.php';
-require_once 'control-color/src/Field/Color.php';
+// Include url-getter package files.
+require_once 'inc/customizer/packages/url-getter/src/URL.php';
+// Include control-base package files.
+require_once 'inc/customizer/packages/control-base/src/Control/Base.php';
+// Include field package files.
+require_once 'inc/customizer/packages/field/src/Field.php';
+// Include control-color package files.
+require_once 'inc/customizer/packages/control-color/src/Control/Color.php';
+require_once 'inc/customizer/packages/control-color/src/Field/Color.php';
 ```
 
 ## How to Create a Control Using the Customizer API
@@ -100,14 +106,13 @@ new \Kirki\Field\Color( [
 ] );
 ```
 
-This is a simple abstraction, allowing you to write less code and achieve the same results as the example in the [customizer-api](https://github.com/kirki-framework/control-color/wiki/Create-Control-Using-the-Customizer-API) example.
+This is a simple abstraction, allowing you to write less code and achieve the same results as the example from the Customizer API above.
 
 Things to note regarding this abstraction:
 
 * The `Kirki\Field\Color` object will register the control-class, add the setting and the control, all in one step.
 * While the default WordPress Customizer API requires hooking in `customize_register`, using the `Kirki\Field\Color` class should not be done inside that hook. There is no need for that, all actions are added automatically by the object itself.
 * The sanitization callback is automatically added if left undefined.
-
 
 ## Adding Transparency (alpha) to your control
 
@@ -126,16 +131,6 @@ To make a control hue-only, you can add the following in the array of arguments 
 'mode' => 'hue'
 ```
 
-<img src="https://user-images.githubusercontent.com/588688/57177723-d413bf80-6e6f-11e9-90dc-a9ef415b3fdb.png" alt="Hue-only colorpicker" width="300">
-
 This will remove the color-palette, and users will be presented with a simple slider they can use to select their hue.
 
 Please note that when in hue mode, the control will save an `integer` value. To use this in your theme, you may want to use `hsl(a)` colors in your CSS.
-
-## Updating `iro.js` in the control
-
-To update scripts you can run the following command from a terminal:
-
-```
-rm -rf node_modules && npm install --only=production
-```
