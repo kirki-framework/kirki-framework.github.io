@@ -3,6 +3,14 @@
   - installation
   - embedding
 
+- title: API
+  docs:
+  - api/controls
+  - api/sections
+  - api/panels
+  - api/legacy
+  - api/customizer
+
 - title: Customizer Controls
   docs:
   - controls/color
