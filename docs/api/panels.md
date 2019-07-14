@@ -15,7 +15,7 @@ new \Kirki\Panel( 'panel_id', array(
 ) );
 ```
 
-If you want to remove a section that has already been added you can use the `remove` method:
+If you want to remove a panel that has already been added you can use the `remove` method:
 
 ```php
 $panel = new \Kirki\Panel( 'panel_id' );
